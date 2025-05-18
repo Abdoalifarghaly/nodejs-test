@@ -16,7 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/users", usersRoute);
 app.use("/posts",postsRoute)
-
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 app.use((err,req, res, next) => {
   res.status(404).send(
     {
